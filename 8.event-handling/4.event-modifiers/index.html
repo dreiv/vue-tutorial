@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- the click event's propagation will be stopped -->
+      <a @click.stop="doSomething" href="#">
+        No propagation
+      </a>
+      <hr />
+
+      <!-- the submit event will no longer reload the page -->
+      <form @submit.prevent="doSomething">
+        Does not reload
+        <button>Submit</button>
+      </form>
+      <hr />
+
+      <!-- modifiers can be chained -->
+      <a @click.stop.prevent="doSomething" href="#">
+        Chained: click->stop->prevent
+      </a>
+      <hr />
+
+      <!-- just the modifier -->
+      <form @submit.prevent>
+        Just a modifier(Prevent)
+      </form>
+      <hr />
+
+      <!-- use capture mode when adding the event listener -->
+      <!-- i.e. an event targeting an inner element is handled here before being handled by that element -->
+      <div @click.capture="doSomething">
+        Captures event and handles it before the target gets to it.
+      </div>
+      <hr />
+
+      <!-- only trigger handler if event.target is the element itself -->
+      <!-- i.e. not from a child element -->
+      <div @click.self="doSomething">
+        Only trigger the handling if the target is the element itself.
+      </div>
+      <hr />
+
+      <a @click.once="doSomething" href="#">
+        Only triggers once.
+      </a>
+      <hr />
+
+      <div class="scrollable" @scroll.passive="doSomething">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis
+        aliquid magnam temporibus accusamus consectetur repudiandae ullam ut
+        error rem dolores culpa nesciunt, dolore unde itaque totam tempora
+        maiores obcaecati! Iste id dolor harum itaque minus labore, eveniet est
+        vitae, reiciendis ea quae illum, dolores porro earum magni fugiat quis.
+        Delectus et placeat commodi, sint rerum similique iusto iste. Harum.
+        Nisi non eos soluta id odio enim rerum maiores aliquid voluptatem sequi
+        aliquam vel beatae dicta, maxime perferendis repellendus iste tempora
+        distinctio officiis natus. Sint in non similique placeat ab. Hic
+        laudantium, beatae obcaecati soluta iste nisi quae. Commodi nobis
+        necessitatibus, eligendi illo eaque asperiores autem exercitationem
+        maxime repellendus mollitia natus distinctio est facilis amet
+        dignissimos quam aliquam temporibus. Provident! Quod aliquam, vel porro
+        nam fuga unde, odio distinctio ducimus dolores, saepe minima commodi non
+        ut id natus enim! Omnis, impedit deserunt eius nisi in eaque itaque sed
+        eum distinctio. Ipsum nihil porro harum repellat suscipit. Cumque
+        praesentium minus fugiat voluptatibus eius sit dicta consequuntur
+        laborum velit ipsa, nihil vitae libero placeat, dolorem dignissimos,
+        unde a. Deleniti laboriosam illum aliquam. Doloremque facere vero libero
+        facilis et voluptate suscipit aliquam! Amet, veniam? Voluptatum odit
+        officia quas provident? Tenetur, itaque mollitia. Consectetur atque
+        repellat illo vero ab deserunt itaque laborum reiciendis ullam. Sit
+        commodi deleniti tempora perferendis voluptatum, fuga omnis consequatur
+        nemo quis rerum earum esse veniam, animi nesciunt ab libero. Sed odio
+        quidem adipisci debitis ipsum nihil natus explicabo ab consequuntur.
+        Fugit doloribus eaque est dolorum officiis, doloremque tempore in
+        sapiente aliquid aut rerum nam officia culpa illum vitae consectetur
+        aperiam. Assumenda mollitia nihil laborum neque delectus minus ducimus
+        nam cumque. Dolorum obcaecati error iure, vel perferendis repellat
+        itaque debitis officiis hic iusto est autem veritatis alias! Accusamus
+        reprehenderit vero labore, iusto eum est, dolore quas, doloribus numquam
+        laudantium ut nemo. Reiciendis eaque reprehenderit ipsum qui possimus
+        earum soluta dolores quam obcaecati provident similique deleniti
+        doloribus cupiditate consequatur veritatis, esse ad ipsam debitis. Ipsam
+        adipisci placeat voluptatum reiciendis odit necessitatibus tempora! Quos
+        magnam ducimus ipsum beatae at recusandae! Provident animi, eos nihil
+        numquam porro magni repellendus suscipit, fuga sunt dignissimos
+        asperiores! Fugit nobis ducimus quas totam, natus unde libero quod
+        ipsam. Vel neque fuga, iure laborum asperiores enim sed repudiandae
+        consequuntur atque molestiae fugit deleniti dolor explicabo quas
+        accusantium? Aliquam cum ipsa eum similique eveniet sint inventore
+        adipisci error dolorem laboriosam.
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
