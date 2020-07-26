@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username" key="username-input" />
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address" key="email-input" />
+      </template>
+
+      <br />
+      <button @click="toggleLogin">Toggle login type</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
