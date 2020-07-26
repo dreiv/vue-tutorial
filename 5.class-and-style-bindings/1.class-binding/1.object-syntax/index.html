@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p class="static" :class="{active: isActive, error: hasError}">
+        Toggle my classes :D
+      </p>
+
+      <button @click="isActive = !isActive">Toggle Active</button>
+      <button @click="hasError = !hasError">Toggle Error</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
