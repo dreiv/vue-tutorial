@@ -5,16 +5,16 @@ var app = new Vue({
     answer: 'I cannot give you an answer until you ask a question!'
   },
   watch: {
-    question: function (newQuestion, oldQuestion) {
+    question(newQuestion, oldQuestion) {
       this.answer = 'Waiting for you to stop typing...';
       this.debouncedGetAnswer();
     }
   },
-  created: function () {
+  created() {
     this.debouncedGetAnswer = _.debounce(this.getAnswer, 500);
   },
   methods: {
-    getAnswer: function () {
+    getAnswer() {
       if (this.question.indexOf('?') === -1) {
         this.answer = 'Questions usually contain a question mark. ;-)';
         return;
