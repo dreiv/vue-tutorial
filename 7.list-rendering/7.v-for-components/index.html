@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <form @submit.prevent="addNewTodo">
+        <label>
+          Add a todo<br />
+          <input
+            type="text"
+            v-model="newTodoText"
+            placeholder="E.g. Feed the cat"
+          />
+        </label>
+
+        <button>Add</button>
+      </form>
+
+      <ul>
+        <li
+          is="todo-item"
+          v-for="(todo, index) in todos"
+          :key="todo.id"
+          :title="todo.title"
+          @remove="todos.splice(index, 1)"
+        ></li>
+      </ul>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
