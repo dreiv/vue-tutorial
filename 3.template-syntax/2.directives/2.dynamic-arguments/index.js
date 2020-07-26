@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    argument: 'bar'
+    argument: 'bar',
+    eventName: 'click'
   }
 });
