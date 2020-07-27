@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input
+        type="checkbox"
+        v-model="toggle"
+        true-value="yes"
+        false-value="no"
+      />
+      <p>Toggled: {{ toggle }}</p>
+
+      <input type="radio" v-model="pick" :value="a" />
+      <p>Pick: {{ pick }}</p>
+
+      <select v-model="selected">
+        <option :value="{ number: 123 }">123</option>
+      </select>
+      <p>Select: {{ selected?.number }}</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
