@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>Press Enter</p>
+      <input @keyup.enter="submit" />
+
+      <p>Press Alt + C</p>
+      <input @keyup.alt.67="doSomething" />
+
+      <div @click.ctrl="doSomething">
+        Press Ctrl + Click
+      </div>
+
+      <p>This will fire even if Alt or Shift is also pressed</p>
+      <button @click.ctrl="doSomething">A</button>
+
+      <p>This will only fire when Ctrl and no other keys are pressed</p>
+      <button @click.ctrl.exact="doSomething">A</button>
+
+      <p>This will only fire when no system modifiers are pressed</p>
+      <button v-on:click.exact="doSomething">A</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
