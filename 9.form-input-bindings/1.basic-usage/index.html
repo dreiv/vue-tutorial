@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input v-model="message" placeholder="edit me" />
+      <p>Message is: {{ message }}</p>
+
+      <span>Multiline message is:</span>
+      <p style="white-space: pre-line;">{{ multilineMessage }}</p>
+      <br />
+      <textarea
+        v-model="multilineMessage"
+        placeholder="add multiple lines"
+      ></textarea>
+
+      <p>Checkbox</p>
+      <input type="checkbox" id="checkbox" v-model="checked" />
+      <label for="checkbox">{{ checked }}</label>
+
+      <p>Checked names: {{ checkedNames }}</p>
+      <label v-for="name of checkedNames">
+        <input type="checkbox" :value="name" v-model="name.checked" />
+        {{ name.name }}
+      </label>
+
+      <p>Picked: {{ picked }}</p>
+      <label v-for="option of radioOptions">
+        <input type="radio" :value="option" v-model="picked" />
+        {{ option }}
+      </label>
+
+      <p>Selected option: {{ selected }}</p>
+      <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option v-for="option of selectOptions" :value="option">
+          {{ option }}
+        </option>
+      </select>
+
+      <p>Selected: {{ selectedMult }}</p>
+      <select v-model="selectedMult" multiple>
+        <option v-for="option of selectOptions" :value="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
