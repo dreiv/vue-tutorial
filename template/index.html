@@ -5,7 +5,16 @@
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          @enlarge-text="onEnlargeText"
+          :key="post.id"
+          :post="post"
+        ></blog-post>
+      </div>
+    </div>
 
     <script src="index.js"></script>
   </body>
