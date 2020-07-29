@@ -5,7 +5,10 @@
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <custom-input v-model="searchText"></custom-input>
+      <p>Search text: {{ searchText }}</p>
+    </div>
 
     <script src="index.js"></script>
   </body>
