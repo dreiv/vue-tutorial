@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button
+        v-for="tab in tabs"
+        :key="tab"
+        :class="['tab-button', { active: currentTab === tab }]"
+        @click="currentTab = tab"
+      >
+        {{ tab }}
+      </button>
+
+      <component :is="currentTabComponent" class="tab"></component>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
