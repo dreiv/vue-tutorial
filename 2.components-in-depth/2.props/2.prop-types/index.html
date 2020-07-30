@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>Static</p>
+      <blog-post title="My journey with Vue"></blog-post>
+
+      <p>Dynamically assign the value of a variable</p>
+      <blog-post :title="post.title"></blog-post>
+
+      <p>Dynamically assign the value of a complex expression</p>
+      <blog-post :title="post.title + ' by ' + post.author"></blog-post>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
