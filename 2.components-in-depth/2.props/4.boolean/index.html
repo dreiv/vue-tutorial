@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>No value</p>
+      <boolean-component is-published></boolean-component>
+
+      <p>Bound to boolean</p>
+      <boolean-component :is-published="false"></boolean-component>
+
+      <p>Bound to variable</p>
+      <boolean-component :is-published="post.isPublished"></boolean-component>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
