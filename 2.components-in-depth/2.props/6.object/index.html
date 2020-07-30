@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>Static with bind.</p>
+      <object-component
+        :author="{
+          name: 'Drei',
+          company: 'Something Dynamics'
+        }"
+      ></object-component>
+
+      <p>Dynamically assign to the value of a variable.</p>
+      <object-component :author="post.author"></object-component>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
