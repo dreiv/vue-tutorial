@@ -3,7 +3,15 @@ var ComponentA = {
 };
 
 var ComponentB = {
-  template: '<p>component-b</p>'
+  components: {
+    'component-a': ComponentA
+  },
+  template: `
+    <div>
+      <p>component-b</p>
+      <component-a></component-a>
+    </div>
+  `
 };
 
 var ComponentC = {
