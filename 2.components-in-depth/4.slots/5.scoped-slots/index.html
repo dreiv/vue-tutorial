@@ -6,9 +6,9 @@
 
   <body>
     <div id="app">
-      <current-user v-slot:default="{ user }">
-        {{ user.firstName }}
-      </current-user>
+      <simple-list :items="cats" v-slot="{ item: cat }">
+        {{ cat.name }}, {{ cat.age }} years old
+      </simple-list>
     </div>
 
     <script src="index.js"></script>

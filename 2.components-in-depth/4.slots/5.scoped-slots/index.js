@@ -1,20 +1,23 @@
-Vue.component('current-user', {
+Vue.component('SimpleList', {
+  props: {
+    items: { type: Array, required: true }
+  },
   template: `
-    <div>
-      <h1>Current User</h1>
-      <slot :user="user">
-        {{ user.lastName }}
-      </slot>
-    </div>
+    <ul>
+      <li v-for="( item, index ) in items" :key="index">
+        <slot :item="item">{{ item }}</slot>
+      </li>
+    </ul>
   `
 });
 
 var app = new Vue({
   el: '#app',
   data: {
-    user: {
-      firstName: 'andrei',
-      lastName: 'voicu'
-    }
+    cats: [
+      { name: 'Tom', age: 3 },
+      { name: 'Felix', age: 5 },
+      { name: 'Sylvester', age: 7 }
+    ]
   }
 });
