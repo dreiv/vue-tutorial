@@ -7,10 +7,10 @@
   <body>
     <div id="app">
       <simple-grid :columns="columns" :rows="cats">
-        <template v-slot:cell-age="{ row: cat }">
+        <template #cell-age="{ row: cat }">
           {{ cat.age }} years old
         </template>
-        <template v-slot:cell-image="{ row: cat }">
+        <template #cell-image="{ row: cat }">
           <img :src="cat.image" />
         </template>
       </simple-grid>
