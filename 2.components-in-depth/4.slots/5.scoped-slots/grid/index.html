@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <simple-grid :columns="columns" :rows="cats">
+        <template v-slot:cell-age="{ row: cat }">
+          {{ cat.age }} years old
+        </template>
+        <template v-slot:cell-image="{ row: cat }">
+          <img :src="cat.image" />
+        </template>
+      </simple-grid>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
