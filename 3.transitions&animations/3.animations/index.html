@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button @click="show = !show">
+        Toggle
+      </button>
+
+      <transition name="bounce">
+        <p v-show="show">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          facilisis enim libero, at lacinia diam fermentum id. Pellentesque
+          habitant morbi tristique senectus et netus.
+        </p>
+      </transition>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
