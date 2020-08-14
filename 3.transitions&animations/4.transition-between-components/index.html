@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <label v-for="option of options">
+        <input type="radio" :value="option" v-model="picked" />
+        {{ option }}
+      </label>
+      <transition name="component-fade" mode="out-in">
+        <component :is="picked"></component>
+      </transition>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
