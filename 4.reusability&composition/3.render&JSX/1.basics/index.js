@@ -1,5 +1,5 @@
 Vue.component('anchored-heading', {
-  render: function (createElement) {
+  render(createElement) {
     return createElement(
       'h' + this.level, // tag name
       this.$slots.default // array of children
